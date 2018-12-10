@@ -87,6 +87,17 @@
     }
 
     function countData() {
+      UTdata.count().fetchAll()
+      .then(function(results){
+        $("#display").removeClass();
+        $("#display").addClass("bg-success");
+        $("#display").html("update success");
+      })
+      .catch(function(error){
+        $("#display").removeClass();
+        $("#display").addClass("bg-warning");
+        $("#display").html("update fail:"+ JSON.stringify(error));
+      })
     }
 
     function sortData() {
